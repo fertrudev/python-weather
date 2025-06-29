@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weather</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}" />
+</head>
+<body>
+  <h1>Weather</h1>
+
+  <form id="form" aria-label="Search city weather">
+    <input
+      id="city"
+      name="city"
+      type="text"
+      placeholder="Enter city"
+      autocomplete="off"
+      aria-required="true"
+      aria-label="City name"
+      required
+    />
+    <button type="submit" aria-label="Search weather">Search</button>
+    <div class="toggle-switch-wrapper">
+  <button type="button" id="toggleUnits" class="toggle-switch" aria-pressed="false" aria-label="Toggle temperature units between Celsius and Fahrenheit">
+    <span class="toggle-option active" data-unit="metric">°C</span>
+    <span class="toggle-option" data-unit="imperial">°F</span>
+    <span class="toggle-slider"></span>
+  </button>
+</div>
+
+   
+  </form>
+
+  <div id="alert" role="alert"></div>
+
+  <section id="result" aria-live="polite" aria-atomic="true" aria-relevant="additions removals">
+    <article class="card">
+      <h2 class="city-name" id="cityName"></h2>
+      <div class="weather-main">
+        <img id="icon" alt="Weather icon" />
+        <div class="weather-details">
+          <p id="desc" class="weather-desc"></p>
+          <p>Temp: <span id="temp"></span>&deg; (<small>Feels like <span id="feels"></span>&deg;</small>)</p>
+          <p>Humidity: <span id="hum"></span>%</p>
+          <p>Wind: <span id="wind"></span> <span id="windUnit"></span></p>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" aria-label="Temperature forecast chart">
+      <canvas id="chart" role="img" aria-label="Temperature forecast chart"></canvas>
+    </article>
+  </section>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- External JS -->
+  <script src="{{ url_for('static', filename='scripts/app.js') }}"></script>
+</body>
+</html>
+
+

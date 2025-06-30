@@ -16,11 +16,9 @@ def api_weather():
     lon = request.args.get('lon')
 
     if lat and lon:
-        # Obtener datos por latitud y longitud
         current = get_current_weather(lat=lat, lon=lon, units=units)
         forecast = get_forecast(lat=lat, lon=lon, units=units)
     elif city:
-        # Obtener datos por ciudad
         current = get_current_weather(city=city, units=units)
         forecast = get_forecast(city=city, units=units)
     else:

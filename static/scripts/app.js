@@ -10,15 +10,15 @@ const form = document.getElementById('form'),
   feels = document.getElementById('feels'),
   hum = document.getElementById('hum'),
   wind = document.getElementById('wind'),
-  toggleUnitsBtn = document.getElementById('toggleUnits'), // Este es el botón contenedor ahora
-  celsiusOption = document.querySelector('.toggle-option[data-unit="metric"]'), // Nueva selección
-  fahrenheitOption = document.querySelector('.toggle-option[data-unit="imperial"]'); // Nueva selección
+  toggleUnitsBtn = document.getElementById('toggleUnits'), 
+  celsiusOption = document.querySelector('.toggle-option[data-unit="metric"]'), 
+  fahrenheitOption = document.querySelector('.toggle-option[data-unit="imperial"]'); 
 
 let currentUnits = localStorage.getItem('units') || 'metric',
   chart,
   lastCity = '';
 
-// Inicializa el estado visual del toggle según la unidad guardada
+
 function updateToggleVisuals() {
   if (currentUnits === 'imperial') {
     toggleUnitsBtn.setAttribute('aria-pressed', 'true');
@@ -31,7 +31,7 @@ function updateToggleVisuals() {
   }
 }
 
-// Llama a la función al cargar la página para establecer el estado inicial
+
 updateToggleVisuals();
 
 form.onsubmit = (e) => {
@@ -48,10 +48,10 @@ toggleUnitsBtn.onclick = () => {
     currentUnits = 'metric';
   }
   localStorage.setItem('units', currentUnits);
-  updateToggleVisuals(); // Actualiza el estado visual del toggle
+  updateToggleVisuals(); 
 
   if (lastCity) {
-    fetchWeather(lastCity); // Vuelve a buscar el tiempo con las nuevas unidades
+    fetchWeather(lastCity); 
   }
 };
 
@@ -144,7 +144,7 @@ if (navigator.geolocation) {
       if (!res.ok) throw new Error(data.error);
       showWeather(data);
       lastCity = data.current.city;
-      updateToggleVisuals(); // Asegura que el botón se actualice al cargar por geolocalización
+      updateToggleVisuals(); 
     } catch {
       alertEl.textContent = "Unable to retrieve weather for your location.";
       alertEl.style.display = 'block';

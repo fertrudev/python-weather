@@ -245,12 +245,12 @@ button[type="submit"]:hover {
     width: 100%;
   }
 
-  /* Fijamos ancho del toggle para que el slider funcione */
+
   .toggle-switch {
     width: 110px;
   }
 
-  /* Mismo desplazamiento que en desktop para el slider */
+
   .toggle-switch[aria-pressed="true"] .toggle-slider {
     transform: translateX(54px);
   }

@@ -1,6 +1,4 @@
 README - Python Weather App
-🌤️ Python Weather App
-Una aplicación web sencilla que permite consultar el clima actual y el pronóstico por ciudad. Utiliza una API de clima externa para obtener datos en tiempo real y los presenta de forma clara e interactiva.
 
 🌤️ Python Weather App
 Una aplicación web sencilla que permite consultar el clima actual y el pronóstico por ciudad. Utiliza una API de clima externa para obtener datos en tiempo real y los presenta de forma clara e interactiva.

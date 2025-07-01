@@ -10,9 +10,9 @@ const form = document.getElementById('form'),
   feels = document.getElementById('feels'),
   hum = document.getElementById('hum'),
   wind = document.getElementById('wind'),
-  toggleUnitsBtn = document.getElementById('toggleUnits'), 
-  celsiusOption = document.querySelector('.toggle-option[data-unit="metric"]'), 
-  fahrenheitOption = document.querySelector('.toggle-option[data-unit="imperial"]'); 
+  toggleUnitsBtn = document.getElementById('toggleUnits'), // Este es el botón contenedor ahora
+  celsiusOption = document.querySelector('.toggle-option[data-unit="metric"]'), // Nueva selección
+  fahrenheitOption = document.querySelector('.toggle-option[data-unit="imperial"]'); // Nueva selección
 
 let currentUnits = localStorage.getItem('units') || 'metric',
   chart,
@@ -51,7 +51,7 @@ toggleUnitsBtn.onclick = () => {
   updateToggleVisuals(); 
 
   if (lastCity) {
-    fetchWeather(lastCity); 
+    fetchWeather(lastCity); // Vuelve a buscar el tiempo con las nuevas unidades
   }
 };
 
